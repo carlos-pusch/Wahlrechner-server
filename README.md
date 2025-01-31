@@ -18,7 +18,7 @@ sudo apt update && sudo apt install git -y
 
 ```
 mkdir /opt/wahlrechner-server/
-git clone --recurse-submodules https://github.com/wahlrechner/server /opt/wahlrechner-server/
+git clone --recurse-submodules https://github.com/carlos-pusch/Wahlrechner-server /opt/wahlrechner-server/
 cd /opt/wahlrechner-server
 ```
 
