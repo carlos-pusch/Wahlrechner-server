@@ -1,4 +1,4 @@
-Original by [Linus Köster](https://github.com/wahlrechner/wahlrechner)
+**Original by [Linus Köster](https://github.com/wahlrechner/wahlrechner)**
 
 # Aufsetzen eines Wahlrechner-Servers
 
@@ -24,6 +24,13 @@ cd /opt/wahlrechner-server
 
 ### Installation von Docker
 
+Einschub: Falls mal Probleme mit Schreibrechten durch `docker compose up -d`oder `bash ServerUpdate.sh` entstehen, dann liegt es vermutlich an docker-snap.
+Stattdessen muss docker-ce verwendet werden. Ggf. folgenden Code zum Entfernen verwenden:
+
+```
+sudo snap remove docker --purge
+```
+
 _Mehr Informationen zur Installation von Docker findest du [hier](https://docs.docker.com/engine/install/ubuntu/)._
 
 ```
@@ -47,16 +54,6 @@ echo \
 sudo apt update
 sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
-
-
-## Wahlrechner Theme als Submodul einbinden
-
-Beispiel für [theme_buxtomat](https://github.com/wahlrechner/theme_buxtomat):
-
-```
-git submodule add https://github.com/wahlrechner/theme_buxtomat.git /opt/wahlrechner-server/themes/theme_buxtomat
-```
-
 
 ## Konfiguration des Wahlrechners
 
