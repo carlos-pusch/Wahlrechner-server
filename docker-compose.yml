@@ -27,6 +27,34 @@ services:
         volumes:
             - ./data/wahlrechner-eins/mysql:/var/lib/mysql
 
+    wahlrechner-zwei:
+        container_name: wahlrechner-zwei
+        image: ghcr.io/wahlrechner/wahlrechner:latest
+        command: bash -c 'chmod +x docker/wait-for-it/wait-for-it.sh && chmod +x docker/startup-production.sh && docker/wait-for-it/wait-for-it.sh wahlrechner-zwei-db:3306 -t 120 -- docker/startup-production.sh'
+        restart: always
+        volumes:
+            - ./data/wahlrechner-zwei/static:/code/assets/
+            - ./data/wahlrechner-zwei/media:/code/media/
+            - ./data/wahlrechner-zwei/logs/wahlrechner:/code/logs/
+            - ./data/wahlrechner-zwei/migrations/wahlrechner:/code/wahlrechner/migrations
+            - ./themes:/code/themes
+            - ./data/wahlrechner-zwei/stats:/code/wahlrechner/stats
+        env_file:
+            - ./config/global.env
+            - ./config/wahlrechner-zwei.env
+        depends_on:
+            - wahlrechner-zwei-db
+
+    wahlrechner-zwei-db:
+        container_name: wahlrechner-zwei-db
+        image: mariadb
+        restart: always
+        env_file:
+            - ./config/global.env
+            - ./config/wahlrechner-zwei.env
+        volumes:
+            - ./data/wahlrechner-zwei/mysql:/var/lib/mysql
+
     # TODO: Als Block einer Einheit (wahlrechner-eins und wahlrechner-eins-db) kopieren und immer "eins" mit einer neuen Zahl bzw. Namen per Suchen & Ersetzen austauschen
     # Rest in diesem Block so lassen
     # weiter unten in web noch anpassen
