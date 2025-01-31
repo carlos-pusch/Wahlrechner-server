@@ -73,9 +73,12 @@ services:
             # TODO: Pro Wahlrechner-Instanz müssen hier zwei Zeilen hinzugefügt werden
             - ./data/wahlrechner-eins/static:/wahlrechner-eins/static
             - ./data/wahlrechner-eins/media:/wahlrechner-eins/media
+            - ./data/wahlrechner-zwei/static:/wahlrechner-zwei/static
+            - ./data/wahlrechner-zwei/media:/wahlrechner-zwei/media
             ## - ./data/wahlrechner-zwei/static:/wahlrechner-zwei/static
             ## - ./data/wahlrechner-zwei/media:/wahlrechner-zwei/media
         depends_on:
             # TODO: Pro Wahlrechner-Instanz muss hier eine Zeile hinzugefügt werden
             - wahlrechner-eins
+            - wahlrechner-zwei
             ## - wahlrechner-zwei
