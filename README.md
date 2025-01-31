@@ -1,3 +1,5 @@
+Original by [Linus Köster](https://github.com/wahlrechner/wahlrechner)
+
 # Aufsetzen eines Wahlrechner-Servers
 
 Dieses Repository dient als Hifestellung, um eine [Wahlrechner](https://github.com/wahlrechner/wahlrechner)-Instanz auf einem Server aufzusetzen.
