@@ -12,6 +12,7 @@ docker rm $(docker ps -aq) --force
 In /opt
 
 ```
+cd ..
 sudo chmod -R u+rwx wahlrechner-server
 sudo chown -R carlos:carlos wahlrechner-server
 ```
@@ -21,6 +22,7 @@ anpassen von global.env | 3 PWDs
 falls vergessen /opt/wahlrechner-server löschen und neustarten
 
 ```
+cd /opt/wahlrechner-server
 sudo systemctl restart docker
 sudo bash ServerUpdate.sh
 ```
