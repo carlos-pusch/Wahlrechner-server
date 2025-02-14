@@ -6,7 +6,7 @@ sudo git clone --recurse-submodules https://github.com/carlos-pusch/Wahlrechner-
 
 cd /opt/wahlrechner-server
 
-docker rm $(docker ps -aq)
+docker rm $(docker ps -aq) --force
 ```
 
 In /opt
