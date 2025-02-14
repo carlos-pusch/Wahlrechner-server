@@ -9,6 +9,13 @@ cd /opt/wahlrechner-server
 docker rm $(docker ps -aq)
 ```
 
+In /opt
+
+```
+sudo chmod -R u+rwx wahlrechner-server
+sudo chown -R carlos:carlos wahlrechner-server
+```
+
 anpassen von global.env | 3 PWDs
 
 falls vergessen /opt/wahlrechner-server löschen und neustarten
